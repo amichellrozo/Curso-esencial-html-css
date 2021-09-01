@@ -1,6 +1,100 @@
- *{
-  color : #212121
- }
- a {
-  color : #212121
- }
+/*Estilo de letra charter normal*/
+@font-face {
+  font-family: Charter; /*Nomre fuente*/
+  src: url("../fonts/charter-regular.otf"); /*Ruta fuente*/
+  font-style: normal; /*estilo fuente*/
+  font-weight: 400; /*peso fuente*/
+}
+/*Estilo de letra charter italic*/
+@font-face {
+  font-family: Charter; /*Nomre fuente*/
+  src: url("../fonts/charter-italic.otf"); /*Ruta fuente*/
+  font-style: italic; /*estilo fuente*/
+  font-weight: 400; /*peso fuente*/
+}
+/*Estilo de letra charter bold*/
+@font-face {
+  font-family: Charter; /*Nomre fuente*/
+  src: url("../fonts/charter-bold.otf"); /*Ruta fuente*/
+  font-style: normal; /*estilo fuente*/
+  font-weight: bold; /*peso fuente*/
+}
+/*Estilo de letra charter bold italic*/
+@font-face {
+  font-family: Charter; /*Nomre fuente*/
+  src: url("../fonts/charter-bold-italic.otf"); /*Ruta fuente*/
+  font-style: italic; /*estilo fuente*/
+  font-weight: bold; /*peso fuente*/
+}
+:root {
+  font-size: 16px;
+  /*variables*/
+  /*gama colores grises*/
+  --gray30: #212121;
+  --gray20: #212429;
+  --gray10: #424242;
+  --gray05: #616161;
+}
+body {
+  color: var(--gray30);
+  /*font importada google fonts*/
+  font-family: "Roboto", sans-serif;
+  /* font-family: charter;*/
+}
+a {
+  color: var(--gray30);
+}
+header {
+  /*--gray10:#ac30bd; por si solo este espacio 
+  necesita un color en especifico*/
+  font-size: 14px;
+  color: var(--gray05);
+}
+header a {
+  color: var(--gray05);
+  text-decoration: none;
+}
+header a:hover {
+  color: var(--gray30);
+}
+
+nav detail summary {
+  font-weight: bold;
+}
+h1 {
+  font-size: 60px;
+}
+h2 {
+  font-size: 2em;
+}
+h3 {
+  font-size: 1.5em;
+  counter-increment: titleList;
+}
+pre {
+  background: #fec62e;
+}
+.hero {
+  background-image: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    ),
+    url(../images/patron-1.png); /* fondo con degradado*/
+  /*background-repeat: no-repeat; /*para que la imagen no se repita*/
+  /*background-position: center;/*imagen centrada*/
+  /*background-position: left 50px bottom;/*left/right top/bottom*/
+  /*background-size: cover;/*se expanda sin perder proporcion  */
+  height: 350px;
+} /*Seudoelementos */
+
+h3::before {
+  content: counter(titleList) ". "; /*contador numerico*/
+}
+h3::after {
+  content: ""; /*vacio*/
+  width: 32px; /*medidas*/
+  height: 4px;
+  background: var(--gray10); /*color*/
+  display: block; /*propiedad*/
+}
